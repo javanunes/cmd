@@ -85,6 +85,15 @@ class Prompt {
         cout << "(c) 2016 Microsoft Corporation. All rights reserved.\n\n";
     }
 
+    void ipconfig(string ip){
+        cout << "\nWindows IP configuration\n"<<endl;
+        cout << "Ethernet adapter Local Area Cconnection 1:\n"<<endl;
+        cout << "       Connection-specific DNS suffix...: dugway.gov"<<endl;
+        cout << "       IP Address.......................: "+ ip<<endl;
+        cout << "       Subnet Mask......................: 0.0.0.0"<<endl;
+        cout << "       Default gateway..................: 192.168.1.1\n"<<endl;
+    }
+
     void ppt(string volume){
         cout << volume << "\\WINDOWS\\system32>";
     }
@@ -114,6 +123,11 @@ class Prompt {
 
         if(comandos == "w"){
            this->nmap1("80");
+           comandos="";
+        }
+
+        if(comandos == "ipconfig"){
+           this->ipconfig(this->pegaRetornaIP());
            comandos="";
         }
 
